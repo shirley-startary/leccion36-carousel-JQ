@@ -42,8 +42,10 @@ var anteriorImagen = function (e) {
 	cambiarColorBoton(target)
 };
 
-var siguienteImagen = function () {
-	// e.preventDefault();	
+var siguienteImagen = function (e) {
+	if (e !== null) {
+		e.preventDefault();
+	}
 	target = target + 1;
 	target = (target > 4) ? 0 : target;
 	mostrarImagen(target);
@@ -52,7 +54,7 @@ var siguienteImagen = function () {
 
 var autoplay =function () {
 	interval = setInterval(function(){
-		siguienteImagen();
+		siguienteImagen(null);
 	},3000);
 }
 autoplay();
